@@ -138,7 +138,7 @@ const RegistroUsuario = () => {
               colorTexto
               borderRadius
               primarioHover
-              sombraHover
+              justifyContent
             >
               Crear Cuenta
             </Boton>

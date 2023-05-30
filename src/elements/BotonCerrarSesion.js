@@ -1,9 +1,10 @@
 import React from 'react';
-import { ReactComponent as IconoCerrarSesion } from './../img-curso/log-out.svg';
+import { styled } from 'styled-components';
 import Boton from './Boton';
-import { useNavigate } from 'react-router-dom'
-import {signOut} from 'firebase/auth'
-import {auth} from './../firebase/FirebaseConfig'
+import { useNavigate } from 'react-router-dom';
+import {signOut} from 'firebase/auth';
+import {auth} from './../firebase/FirebaseConfig';
+import {ReactComponent as IconoLog} from './../img-curso/log-out.svg';
 
 const BotonCerrarSesion = () => {
 
@@ -19,12 +20,17 @@ const BotonCerrarSesion = () => {
 
     const navigate = useNavigate()
     return ( 
-        <Boton iconoGrande colorTexto borderRadius as={'button'} onClick={cerrarSesion}>
+        <Boton otroboton justifyContent as={'button'} onClick={cerrarSesion}>
             Cerrar Sesion
-            <IconoCerrarSesion/>
+            <IconoLogOut/>
         </Boton>
      );
 }
 
+const IconoLogOut = styled(IconoLog)`
+fill: #f5f5f5;
+width:2rem;
+height:auto;
+`
 
 export default BotonCerrarSesion;

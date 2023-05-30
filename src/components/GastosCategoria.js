@@ -1,7 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Header, Titulo } from "./../elements/Header";
+import { ContenedorHeader, Header } from "./../elements/Header";
 import BtnRegresar from "../elements/BtnRegresar";
+import BarraTotalGastado from "./BarraTotalGastado";
 
 const GastosCategoria = () => {
   return (
@@ -9,10 +10,12 @@ const GastosCategoria = () => {
       <Helmet>
         <title>ReCon - Categorias</title>
       </Helmet>
-      <Header headerGeneral>
+      <ContenedorHeader>
+        <Header>
         <BtnRegresar />
-        <Titulo>Categorias</Titulo>
-      </Header>
+        </Header>
+      </ContenedorHeader>
+      <BarraTotalGastado/>
     </>
   );
 };

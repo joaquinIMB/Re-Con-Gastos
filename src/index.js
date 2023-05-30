@@ -24,7 +24,6 @@ WebFont.load({
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
     <>
       <Helmet>
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
@@ -74,5 +73,4 @@ root.render(
       </AuthProvider>
       <Fondo />
     </>
-  </React.StrictMode>
 );

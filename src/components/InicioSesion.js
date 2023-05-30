@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import {
-  Input,
-  Formulario,
-  ContenedorBoton,
-} from "./../elements/ElementosFormulario";
+import {Input,Formulario,ContenedorBoton} from "./../elements/ElementosFormulario";
 import Contenedor from "../elements/Contenedor";
 import Boton from "./../elements/Boton";
 import { ReactComponent as SvgLogin } from "./../img-curso/login.svg";
+import { ReactComponent as SvgEye } from "./../img-curso/eye.svg";
+import { ReactComponent as SvgEyeSlash } from "./../img-curso/eyeSlash.svg";
 import { styled } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Alerta from "../elements/Alerta";
 import { auth } from "./../firebase/FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { ContenedorIniciarRegistrar, Redireccion } from "../elements/RedireccionFormulario";
+import theme from "../theme";
 
 const InicioSesion = () => {
   const navigate = useNavigate();
@@ -21,6 +20,7 @@ const InicioSesion = () => {
   const [password, establecerPassword] = useState("");
   const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
   const [alerta, cambiarAlerta] = useState({});
+  const [icono, cambiarIcono] = useState(true)
 
   const handleChange = (e) => {
     switch (e.target.name) {
@@ -103,13 +103,30 @@ const InicioSesion = () => {
             value={correo}
             onChange={handleChange}
           />
-          <Input
+
+          {icono ? 
+          <ContenedorInputSlash>
+            <Input
             type="password"
             placeholder="Contraseña "
             name="password"
             value={password}
             onChange={handleChange}
-          />
+            />
+            <SvgEye1 onClick={() => cambiarIcono(!icono)}/> 
+            </ContenedorInputSlash>
+            :
+            <ContenedorInputSlash>
+            <Input
+            type="text"
+            placeholder="Contraseña "
+            name="password"
+            value={password}
+            onChange={handleChange}
+            />
+            <SvgEyeSlash1 onClick={() => cambiarIcono(!icono)}/>
+            </ContenedorInputSlash>
+          }
           <ContenedorBoton>
             <Boton
               as={"button"}
@@ -118,7 +135,7 @@ const InicioSesion = () => {
               colorTexto
               borderRadius
               primarioHover
-              sombraHover
+              justifyContent
             >
               Iniciar Sesion
             </Boton>
@@ -139,9 +156,29 @@ const InicioSesion = () => {
   );
 };
 const Svg = styled(SvgLogin)`
-  width: 70%;
-  height: auto;
-  margin: auto;
-  position: relative;
+    width: 70%;
+    height: auto;
+    margin: auto;
+    position: relative;
 `;
+const SvgEye1 = styled(SvgEye)`
+    width: 1.8rem;
+    height: auto;
+    position: absolute;
+    right: 5%;
+    bottom: 32%;
+    fill:${theme.verdeAgua};
+`
+const SvgEyeSlash1 = styled(SvgEyeSlash)`
+    width: 1.8rem;
+    height: auto;
+    position: absolute;
+    right: 5%;
+    bottom: 32%;
+    fill:${theme.verdeAgua};
+`
+const ContenedorInputSlash = styled.div `
+    width:100%;
+    position:relative;
+`
 export default InicioSesion;

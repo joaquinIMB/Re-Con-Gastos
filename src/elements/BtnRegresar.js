@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import {ReactComponent as IconoFlecha} from "./../img-mias/arrow-31.svg"
+import {ReactComponent as IconoFlecha} from "./../img-curso/arrow-31.svg"
 import { useNavigate } from "react-router-dom";
 
 const BtnRegresar = ({ruta = "/"}) => {
@@ -12,15 +12,15 @@ const BtnRegresar = ({ruta = "/"}) => {
 }
 
 const Btn = styled.button`
+    position:absolute;
     display: block;
-    width: 2.12rem; /* 50px */
-    height:2.12rem; /* 50px */
+    width: 3.12rem; /* 50px */
+    height:3.12rem; /* 50px */
     text-align: center;
     border: none;
     background:none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top:0;
+    left:0;
     cursor: pointer;
  
     @media(max-width: 60rem){ /* 950px */
@@ -34,8 +34,10 @@ const Icono = styled(IconoFlecha)`
     height: auto;
     fill: #00000095;
     transform:rotate(180deg);
+    transition:.5s all ease;
+    
     &:hover{
-        fill:#000;
+        fill:#000;       
     }
 `;
  
