@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 import theme from "../theme";
 
 const ContenedorLista = styled.div`
@@ -18,7 +18,7 @@ const Lista = styled.ul`
     padding: 0 0 2.7rem 0;
     height: 100%;
     overflow-y: auto;
-    width: 100%;
+    width:100%;
     align-self: center;
   &::-webkit-scrollbar {
     width: 0.75rem;
@@ -31,33 +31,37 @@ const Lista = styled.ul`
   &::-webkit-scrollbar-thumb {
     background-color: #00000040;
   }
-  li {
-    grid-template-columns: 1fr 1fr 1fr auto;
-  }
-
-  @media (max-width: 50rem) {
-    li {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-    }
-  }
+  ${(props) => props.tamañoPadding && css`
+  padding:2rem 0;
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: center;
+  `}
 `;
 
 const ElementoLista = styled.li`
-    padding: 1.25rem 0;
-    display: grid;
-    gap: 5.31rem;
+    padding: 1rem 0;
+    display: flex;
     justify-content: space-between;
     border-radius: 0 0.31rem 0.31rem 0.31rem;
     background: #d7d7d72b;
-    width: 95%;
+    width: 90%;
     margin: auto;
-
+    border-bottom: 0.5px solid #ffffff;
   & > div {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
+  ${(props) => props.tamañoChico && css`
+    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    transition: all 0.2s ease;
+  `}
 `;
 
 const ListaDeCategorias = styled.ul`
@@ -86,10 +90,9 @@ const Categoria = styled.div`
     height: auto;
     margin-left: 1.25rem;
     border-radius: 0.62rem;
+    @media (max-width: 50rem) {
+    width:4.12rem;
   }
-
-  @media (max-width: 50rem) {
-    font-size: 1.12rem;
   }
 `;
 
@@ -97,9 +100,6 @@ const Descripcion = styled.div`
   justify-content: center;
   font-size: 1.25rem;
   text-transform: capitalize;
-  @media (max-width: 50rem) {
-    justify-content: end;
-  }
 `;
 
 const Valor = styled.div`
@@ -108,26 +108,35 @@ const Valor = styled.div`
   justify-content: center;
   color:${theme.verde};
   @media (max-width: 50rem) {
-    justify-content: start;
+    justify-content:end;
   }
+  ${(props) => props.valorRight && css`
+  justify-content: end;
+  padding-right:1.25rem;
+  `}
 `;
 
 const Fecha = styled.div`
+    width: 90%;
     border-radius: 0.31rem 0.31rem 0 0;
     background: #59c36a;
     text-align: center;
+    font-size:1.5rem;
     color: #fff;
     padding: 0.62rem 3.12rem;
-    display: inline-block;
-    margin: 1.25rem 0 0 2.15rem;
+    display: block;
+    margin:1.5rem auto 0;
   @media (max-width: 50rem) {
-    width: 100%;
+    font-size: 1.4rem;
   }
 `;
 
 const ContenedorBotones = styled.div`
   @media (max-width: 50rem) {
     justify-content: end;
+    flex-direction:column;
+    align-self: center;
+    gap: 1rem;
   }
 `;
 
@@ -148,7 +157,7 @@ const BotonAccion = styled.button`
   align-items: center;
   justify-content: center;
   &:hover {
-    background: ${theme.grisClaro2};
+    background: #d7d7d7;
   }
 
   svg {
@@ -157,6 +166,9 @@ const BotonAccion = styled.button`
 
   @media (max-width: 50rem) {
     opacity: 1;
+    width:2.8rem;
+    height:2.8rem;
+    margin-right:0;
   }
 `;
 
@@ -173,6 +185,7 @@ const Subtitulo = styled.h3`
   font-weight: 400;
   font-size: 40px;
   padding: 2.5rem 0;
+  text-align:center;
 `;
 
 const ContenedorBotonCentral = styled.div`

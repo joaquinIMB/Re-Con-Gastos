@@ -51,11 +51,13 @@ const ListaGastos = () => {
   return (
     <>
       <Helmet>
-        <title>ReCon - Lista de Gastos</title>
+        <title>ReCon - Gastos</title>
       </Helmet>
       <ContenedorLista>
-        <Titulo>Lista de Gastos</Titulo>
-        <BtnRegresar />
+        <Titulo>
+          <BtnRegresar />
+          Tus Gastos
+        </Titulo>
         <Lista>
           {gastos.map((gasto, index) => {
             return (
@@ -63,7 +65,7 @@ const ListaGastos = () => {
                 {!siFechaEsIgual(gastos, index, gasto) && (
                   <Fecha>{formatearFecha(gasto.fecha)}</Fecha>
                 )}
-                <ElementoLista key={gasto.id}>
+                <ElementoLista>
                   <Categoria>
                     <IconosCategorias id={gasto.categoria} />
                   </Categoria>
@@ -96,6 +98,8 @@ const ListaGastos = () => {
                 primarioHover
                 colorTexto
                 justifyContent
+                fontSize
+                tamañoAdaptable
                 as={Link}
                 to={"/"}
               >

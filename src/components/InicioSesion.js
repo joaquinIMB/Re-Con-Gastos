@@ -13,6 +13,7 @@ import { auth } from "./../firebase/FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { ContenedorIniciarRegistrar, Redireccion } from "../elements/RedireccionFormulario";
 import theme from "../theme";
+import Fondo from "../elements/Fondo";
 
 const InicioSesion = () => {
   const navigate = useNavigate();
@@ -136,6 +137,7 @@ const InicioSesion = () => {
               borderRadius
               primarioHover
               justifyContent
+              fontSize
             >
               Iniciar Sesion
             </Boton>
@@ -146,6 +148,7 @@ const InicioSesion = () => {
         </ContenedorIniciarRegistrar>
         </Formulario>
       </Contenedor>
+      <Fondo />
       <Alerta
         tipo={alerta.tipo}
         mensaje={alerta.mensaje}

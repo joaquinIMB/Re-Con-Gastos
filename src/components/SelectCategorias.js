@@ -9,7 +9,7 @@ const SelectCategorias = ({ categoriaInicial, categoriaSeleccionada }) => {
   const [select, cambiarValorSelect] = useState(false);
   const categorias = [
     { id: "comida", texto: "Comida" },
-    { id: "cuentas y pagos", texto: "Cuentas y pagos" },
+    { id: "cuentas", texto: "Cuentas" },
     { id: "hogar", texto: "Hogar" },
     { id: "transporte", texto: "Transporte" },
     { id: "ropa", texto: "Ropa" },
@@ -23,11 +23,7 @@ const SelectCategorias = ({ categoriaInicial, categoriaSeleccionada }) => {
     <ContenedorSelect onClick={() => cambiarValorSelect(!select)}>
       <OpcionSeleccionada>
         {categoriaInicial}
-        {select ?
-        <IconoUp/>
-        :
-        <IconoDown />
-        }
+        {select ? <IconoUp /> : <IconoDown />}
       </OpcionSeleccionada>
       {select && (
         <Opciones>
@@ -63,22 +59,22 @@ const ContenedorSelect = styled.div`
   &:hover {
     background: #d7d7d7;
   }
-  @media (max-width: 64.375rem) {
-    width: 20rem;
+  @media (max-width: 48rem) {
+    width: 70%;
   }
 `;
 
 const OpcionSeleccionada = styled.div`
-    width: 100%;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   svg {
     width: 1.25rem;
     height: auto;
     margin-left: 1.25rem;
-    transition:all 0.3s ease;
+    transition: all 0.3s ease;
   }
 `;
 
@@ -110,7 +106,8 @@ const Opciones = styled.div`
 const Opcion = styled.div`
   padding: 1rem;
   display: flex;
-  align-items:center;
+  align-items: center;
+  font-size:1.25rem;
   svg {
     width: 2.4rem;
     height: auto;
@@ -119,7 +116,7 @@ const Opcion = styled.div`
   &:hover {
     background: #d7d7d7;
   }
-  @media (max-width:64rem){
+  @media (max-width: 64rem) {
     font-size: 18px;
   }
 `;

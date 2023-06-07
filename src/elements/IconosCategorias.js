@@ -12,7 +12,7 @@ const IconosCategorias = ({ id }) => {
     switch (id) {
       case "comida":
         return <IconoComida />;
-      case "cuentas y pagos":
+      case "cuentas":
         return <IconoCuentas />;
       case "hogar":
         return <IconoHogar />;

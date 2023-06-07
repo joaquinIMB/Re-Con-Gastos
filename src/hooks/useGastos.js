@@ -35,10 +35,10 @@ const useGastos = () => {
             })
           )
         );
-      }else{
-        cargarMasElementos(false)
+      } else {
+        cargarMasElementos(false);
       }
-    })
+    });
     return alObtenerMasgastos;
   };
 
@@ -49,7 +49,7 @@ const useGastos = () => {
       orderBy("fecha", "desc"),
       limit(10)
     );
-    const unsuscribe = onSnapshot(consulta, (snapshot) => {
+    const unSuscribe = onSnapshot(consulta, (snapshot) => {
       if (snapshot.docs.length > 0 && snapshot.docs.length === 10) {
         cambiarUltimoGasto(snapshot.docs[snapshot.docs.length - 1]);
         cargarMasElementos(true);
@@ -62,7 +62,7 @@ const useGastos = () => {
         })
       );
     });
-    return unsuscribe;
+    return unSuscribe;
   }, [usuario]);
   return [gastos, obtenerMasGastos, masElementos];
 };

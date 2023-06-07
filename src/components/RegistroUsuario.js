@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet"; //Para reescribir nuestro html
-import {Input,Formulario,ContenedorBoton} from "./../elements/ElementosFormulario";
+import {Input,Formulario,ContenedorBoton,} from "./../elements/ElementosFormulario";
 import Contenedor from "../elements/Contenedor";
 import Boton from "./../elements/Boton";
 import { ReactComponent as SvgRegistro } from "./../img-curso/registro.svg"; //Para importar SVG
@@ -9,7 +9,8 @@ import { auth } from "./../firebase/FirebaseConfig"; //Autenticación base de da
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom"; // Para redirigir a otra ruta
 import Alerta from "../elements/Alerta";
-import {ContenedorIniciarRegistrar, Redireccion} from './../elements/RedireccionFormulario'
+import {ContenedorIniciarRegistrar,Redireccion,} from "./../elements/RedireccionFormulario";
+import Fondo from "../elements/Fondo";
 
 const RegistroUsuario = () => {
   const navigate = useNavigate();
@@ -139,16 +140,20 @@ const RegistroUsuario = () => {
               borderRadius
               primarioHover
               justifyContent
+              fontSize
             >
               Crear Cuenta
             </Boton>
           </ContenedorBoton>
-        <ContenedorIniciarRegistrar>
-          <Redireccion>¿Ya tenes cuenta?</Redireccion>
-          <Redireccion ruta onClick={() => navigate('/iniciar-sesion')}>Inicia Sesion</Redireccion>
-        </ContenedorIniciarRegistrar>
+          <ContenedorIniciarRegistrar>
+            <Redireccion>¿Ya tenes cuenta?</Redireccion>
+            <Redireccion ruta onClick={() => navigate("/iniciar-sesion")}>
+              Inicia Sesion
+            </Redireccion>
+          </ContenedorIniciarRegistrar>
         </Formulario>
       </Contenedor>
+      <Fondo/>
       <Alerta
         tipo={alerta.tipo}
         mensaje={alerta.mensaje}

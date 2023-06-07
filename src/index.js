@@ -12,9 +12,9 @@ import ListaGastos from "./components/ListaGastos";
 import RegistroUsuario from "./components/RegistroUsuario";
 import { Helmet } from "react-helmet";
 import favicon from "./img-curso/favicon.png";
-import Fondo from "./elements/Fondo";
 import { AuthProvider } from "./contextos/authContext";
 import RutaPrivada from "./components/RutaPrivada";
+import { TotalGastadoProvider } from "./contextos/TotalGastadoContext";
 
 WebFont.load({
   google: {
@@ -24,53 +24,54 @@ WebFont.load({
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <>
-      <Helmet>
-        <link rel="shortcut icon" href={favicon} type="image/x-icon" />
-        <title>ReCon</title>
-      </Helmet>
-      <AuthProvider>
-        <BrowserRouter>
-          <Contenedor>
-            <Routes>
-              <Route path="/registro-usuario" element={<RegistroUsuario />} />
-              <Route path="/iniciar-sesion" element={<InicioSesion />} />
-              <Route
-                path="/categoria-gastos"
-                element={
-                  <RutaPrivada>
-                    <GastosCategoria />
-                  </RutaPrivada>
-                }
-              />
-              <Route
-                path="/editar-gastos/:id"
-                element={
-                  <RutaPrivada>
-                    <EditarGastos />
-                  </RutaPrivada>
-                }
-              />
-              <Route
-                path="/lista-gastos"
-                element={
-                  <RutaPrivada>
-                    <ListaGastos />
-                  </RutaPrivada>
-                }
-              />
-              <Route
-                path="/"
-                element={
-                  <RutaPrivada>
-                    <App />
-                  </RutaPrivada>
-                }
-              />
-            </Routes>
-          </Contenedor>
-        </BrowserRouter>
-      </AuthProvider>
-      <Fondo />
-    </>
+  <>
+    <Helmet>
+      <link rel="shortcut icon" href={favicon} type="image/x-icon" />
+      <title>ReCon</title>
+    </Helmet>
+    <AuthProvider>
+      <TotalGastadoProvider>
+      <BrowserRouter>
+        <Contenedor>
+          <Routes>
+            <Route path="/registro-usuario" element={<RegistroUsuario />} />
+            <Route path="/iniciar-sesion" element={<InicioSesion />} />
+            <Route
+              path="/categoria-gastos"
+              element={
+                <RutaPrivada>
+                  <GastosCategoria />
+                </RutaPrivada>
+              }
+            />
+            <Route
+              path="/editar-gastos/:id"
+              element={
+                <RutaPrivada>
+                  <EditarGastos />
+                </RutaPrivada>
+              }
+            />
+            <Route
+              path="/lista-gastos"
+              element={
+                <RutaPrivada>
+                  <ListaGastos />
+                </RutaPrivada>
+              }
+            />
+            <Route
+              path="/"
+              element={
+                <RutaPrivada>
+                  <App />
+                </RutaPrivada>
+              }
+            />
+          </Routes>
+        </Contenedor>
+      </BrowserRouter>
+      </TotalGastadoProvider>
+    </AuthProvider>
+  </>
 );
