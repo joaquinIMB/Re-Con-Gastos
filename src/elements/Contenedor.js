@@ -17,7 +17,6 @@ const Contenedor = styled.div`
       flex-direction: column;
       justify-content: space-between;
       width: 500px;
-      max-height: 50rem;
       background: #fdfdfd;
       box-shadow: 0px 3px 20px #00000040;
       overflow-y: hidden;

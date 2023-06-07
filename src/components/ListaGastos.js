@@ -99,7 +99,6 @@ const ListaGastos = () => {
                 colorTexto
                 justifyContent
                 fontSize
-                tamañoAdaptable
                 as={Link}
                 to={"/"}
               >

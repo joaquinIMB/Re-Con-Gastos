@@ -187,11 +187,12 @@ const FormularioGastos = ({ gasto }) => {
             primario
             primarioHover
             colorTexto 
+            botonSumarBorrar
           >
             {gasto ? "Editar" : "Agregar"}
             <IconoPlus />
           </Boton>
-          <Boton  colorTexto onClick={handleReset}>
+          <Boton  colorTexto botonSumarBorrar onClick={handleReset}>
             Borrar Todo
             <IconoTrash />
           </Boton>

@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import theme from "../theme";
 
 const Boton = styled(Link)`
-  width:30%;
+  width:${(props) => (props.botonSumarBorrar ? "30%" : 'auto')};
   background: ${(props) => (props.primario ? "#59C36A" : `${theme.rojo}`)};
   color: ${(props) => (props.colorTexto ? "#ffffff" : "#59C36A")};
   border: none;
   border-radius: ${(props) => (props.borderRadius ? "4px" : "999px")};
   font-family: "Work Sans", sans-serif;
   padding: 0.7rem;
+  gap:1rem;
   font-size: 1.35rem;
   font-weight: 500;
   cursor: pointer;
@@ -47,7 +48,6 @@ const Boton = styled(Link)`
       }
     `}
   @media (max-width: 40rem) {
-    width: ${(props) => (props.tamañoAdaptable ? "auto" : "100%")};
     font-size:${(props) => props.fontSize ? '1.35rem' : '0'};
     padding: ${(props) => props.padding ? '1.5rem 0' : '0.9rem'};
     gap:0;
