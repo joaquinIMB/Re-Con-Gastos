@@ -192,10 +192,12 @@ const FormularioGastos = ({ gasto }) => {
             {gasto ? "Editar" : "Agregar"}
             <IconoPlus />
           </Boton>
+          {!gasto &&
           <Boton  colorTexto botonSumarBorrar onClick={handleReset}>
-            Borrar Todo
+            Restablecer
             <IconoTrash />
           </Boton>
+           }
         </ContenedorBoton>
         <BarraTotalGastado />
       </Formulario>

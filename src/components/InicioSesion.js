@@ -159,10 +159,13 @@ const InicioSesion = () => {
   );
 };
 const Svg = styled(SvgLogin)`
-    width: 70%;
+    width: 100%;
     height: auto;
-    margin: auto;
+    margin: 6rem auto 4rem;
     position: relative;
+     @media(max-height:30rem){
+      margin: 2rem auto;
+    }
 `;
 const SvgEye1 = styled(SvgEye)`
     width: 1.8rem;

@@ -15,6 +15,7 @@ import favicon from "./img-curso/favicon.png";
 import { AuthProvider } from "./contextos/authContext";
 import RutaPrivada from "./components/RutaPrivada";
 import { TotalGastadoProvider } from "./contextos/TotalGastadoContext";
+import Error404 from "./components/Error404"
 
 WebFont.load({
   google: {
@@ -34,6 +35,7 @@ root.render(
       <BrowserRouter>
         <Contenedor>
           <Routes>
+            <Route path="*" element={<Error404/>}/>
             <Route path="/registro-usuario" element={<RegistroUsuario />} />
             <Route path="/iniciar-sesion" element={<InicioSesion />} />
             <Route

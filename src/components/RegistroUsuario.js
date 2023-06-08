@@ -165,10 +165,13 @@ const RegistroUsuario = () => {
 };
 
 const Svg = styled(SvgRegistro)`
-  width: 60%;
-  height: auto;
-  margin: auto;
-  position: relative;
-  right: 20px;
+    width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    position: relative;
+    right: 5px;
+    @media(max-height:30rem){
+      margin: auto;
+    }
 `;
 export default RegistroUsuario;

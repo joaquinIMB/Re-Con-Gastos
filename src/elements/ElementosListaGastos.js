@@ -49,6 +49,9 @@ const ElementoLista = styled.li`
     width: 90%;
     margin: auto;
     border-bottom: 0.5px solid #ffffff;
+    @media (max-width: 50rem) {
+    gap:1rem;
+  }
   & > div {
     width: 100%;
     display: flex;
@@ -92,6 +95,7 @@ const Categoria = styled.div`
     border-radius: 0.62rem;
     @media (max-width: 50rem) {
     width:4.12rem;
+    margin-left: 0.7rem;
   }
   }
 `;
