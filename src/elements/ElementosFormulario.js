@@ -15,7 +15,7 @@ const ContenedorFiltros = styled.div`
     gap: 2rem;
     & > div {
       width: 100%;
-      height: 4.2rem;
+      height: 5.2rem;
     }
   }
   @media screen and (max-width: 50rem) {
@@ -103,7 +103,7 @@ const InputFormularioGastos = styled.input`
   }
   @media (max-width: 64rem) {
     margin: 0 auto;
-    padding: 1.5rem 1rem 0.5rem 1rem;
+    padding: 1.7rem 1.5rem 0.3rem
   }
 `;
 

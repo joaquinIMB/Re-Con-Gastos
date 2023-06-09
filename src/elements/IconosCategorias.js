@@ -7,6 +7,7 @@ import {ReactComponent as IconoRopa} from "./../img-curso/cat_ropa.svg";
 import {ReactComponent as IconoEscuela} from "./../img-curso/school.svg";
 import {ReactComponent as IconoCompras} from "./../img-curso/cat_compras.svg";
 import {ReactComponent as IconoDiversion} from "./../img-curso/cat_diversion.svg";
+import {ReactComponent as IconoOtros} from "./../img-curso/pen.svg";
 
 const IconosCategorias = ({ id }) => {
     switch (id) {
@@ -26,6 +27,8 @@ const IconosCategorias = ({ id }) => {
         return <IconoCompras />;
       case "entretenimiento":
         return <IconoDiversion />;
+      case "otros":
+        return <IconoOtros/>
       default:
         break;
     }    

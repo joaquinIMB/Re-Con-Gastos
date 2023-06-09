@@ -51,7 +51,7 @@ const ContenedorInput = styled.div`
     border: none;
     cursor: pointer;
     border-radius: 0.625rem;
-    height: 5rem;
+    height: 5.2rem;
     width: 100%;
     padding: 0 1.25rem;
     font-size: 1.5rem;
@@ -68,7 +68,6 @@ const ContenedorInput = styled.div`
       width: 20rem;
     }
     @media (max-width: 64rem) {
-      height: 4.2rem;
       width: 100%;
     }
   }
@@ -89,11 +88,8 @@ const ContenedorInput = styled.div`
 
   .rdp-months {
     display: flex;
-    max-height: 20.75rem;
+    max-height: 23.75rem;
     min-height: 18.75rem;
-    @media (max-width:22.5rem){
-      max-height: 23.75rem;
-    }
   }
 
   .rdp-month {

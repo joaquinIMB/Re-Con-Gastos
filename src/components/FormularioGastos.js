@@ -15,6 +15,7 @@ import EditandoGasto from "../firebase/EditandoGasto";
 import HeaderFormulario from "./HeaderFormulario";
 import { ReactComponent as IconoPlus1 } from "./../img-curso/plus.svg";
 import { ReactComponent as IconoTrash1 } from "./../img-curso/trash.svg";
+import theme from "../theme";
 
 const FormularioGastos = ({ gasto }) => {
   const navigate = useNavigate();
@@ -159,7 +160,7 @@ const FormularioGastos = ({ gasto }) => {
             onChange={handleChange}
           />
           {descripcion.length !== 0 ? (
-            <label style={{ top: "7px", fontSize: "1.5rem" }}>
+            <label htmlFor="descripcion" style={{ top: "7px", fontSize: "1.5rem", color:`${theme.verdeAgua}`}}>
               Descripcion
             </label>
           ) : (
@@ -175,7 +176,7 @@ const FormularioGastos = ({ gasto }) => {
             onChange={handleChange}
           />
           {valor.length !== 0 ? (
-            <label style={{ top: "7px", fontSize: "1.5rem" }}>Precio</label>
+            <label htmlFor="valor" style={{ top: "7px", fontSize: "1.5rem", color:`${theme.verdeAgua}`}}>Precio</label>
           ) : (
             <label style={{ top: "50%", left: "20px" }}>Precio</label>
           )}

@@ -16,6 +16,7 @@ const SelectCategorias = ({ categoriaInicial, categoriaSeleccionada }) => {
     { id: "educacion", texto: "Educación" },
     { id: "compras", texto: "Compras" },
     { id: "entretenimiento", texto: "Entretenimiento" },
+    { id: "otros", texto: "Otros" }
   ];
   const handleClick = (e) =>
     categoriaSeleccionada(e.currentTarget.dataset.valor);
