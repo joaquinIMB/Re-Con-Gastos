@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Re-Con-Gastos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Re-Con-Gastos** es una aplicación web diseñada para la gestión eficiente de gastos personales, permitiendo a los usuarios registrar y monitorear sus gastos diarios, así como obtener balances mensuales con estadísticas detalladas y gráficos de tendencias.
 
-## Available Scripts
+## Descripción
 
-In the project directory, you can run:
+La aplicación ofrece una interfaz intuitiva y amigable que facilita:
 
-### `npm start`
+- **Registro de Gastos**: Añadir gastos diarios con detalles como categoría, monto y descripción.
+- **Visualización de Balances**: Consultar balances mensuales con estadísticas y gráficos que muestran tendencias de gastos.
+- **Gestión de Categorías**: Personalizar y organizar categorías de gastos según las necesidades del usuario.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologías Utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **Firebase**: Plataforma para el desarrollo de aplicaciones web y móviles, utilizada aquí para la autenticación y almacenamiento de datos.
+- **Context API**: Mecanismo de React para manejar el estado global de la aplicación.
+- **Create React App**: Herramienta para la creación y configuración inicial del proyecto.
 
-### `npm test`
+## Estructura del Proyecto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+El proyecto está organizado de la siguiente manera:
 
-### `npm run build`
+- `/public`: Contiene archivos estáticos y el archivo `index.html`.
+- `/src`: Incluye los componentes de React, contextos, estilos y otros archivos fuente.
+- `.firebaserc` y `firebase.json`: Archivos de configuración para Firebase.
+- `package.json`: Archivo que lista las dependencias y scripts del proyecto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalación y Uso
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para ejecutar el proyecto localmente:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clona este repositorio:
 
-### `npm run eject`
+   ```bash
+   git clone https://github.com/joaquinIMB/Re-Con-Gastos.git
+Navega al directorio del proyecto:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copiar
+Editar
+cd Re-Con-Gastos
+Instala las dependencias necesarias:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+Copiar
+Editar
+npm install
+Inicia la aplicación en modo desarrollo:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+bash
+Copiar
+Editar
+npm start
+Luego, abre http://localhost:3000 en tu navegador para ver la aplicación en funcionamiento.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Demo
+Puedes acceder a una versión en vivo de la aplicación en el siguiente enlace:
 
-## Learn More
+[ReCon](https://app-registro-gastos.web.app/iniciar-sesion)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contribuciones
+Este proyecto fue desarrollado como parte de un proyecto personal. Actualmente, no se aceptan contribuciones externas, pero cualquier comentario o sugerencia es bienvenido.
